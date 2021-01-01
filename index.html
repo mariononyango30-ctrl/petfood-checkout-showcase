@@ -1,292 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Figma Design Recreation</title>
-    <style>
-        /* Global resets and centering */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif; /* Placeholder font; replace with actual from Figma */
-            background-color: #ffffff; /* Assuming white background; adjust as needed */
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dog Food | Vet-Approved Nutrition</title>
 
-        .section {
-            width: 1920px;
-            margin: 0 auto; /* Center the section if viewport is wider */
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+  <!-- INTER TIGHT 600 ONLY -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600&display=swap" rel="stylesheet">
 
-        /* First Section */
-        #first-section {
-            height: 810px;
-            padding-top: 80px;
-            padding-bottom: 80px;
-            gap: 48px;
-            opacity: 1;
-        }
+  <style>
+    /* FAST RESET */
+    *,*::before,*::after{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,sans-serif;background:#fff;color:#333;line-height:1.6}
+    img,svg{display:block;max-width:100%;height:auto}
+    h1,h2,h3,h4,p{margin:0}
+    button{cursor:pointer;font-family:inherit}
+    .section{max-width:1200px;margin:auto;padding:80px 20px}
 
-        .header-container {
-            width: 100%; /* Full width within section */
-            text-align: center; /* Assuming centered text; adjust based on Figma */
-        }
+    /* REUSABLE TYPO */
+    .title-xl{font:600 40px/120% 'Inter Tight',sans-serif;letter-spacing:.25px}
+    .text-lg{font-size:16px}
+    .text-sm{font-size:15px}
+    .text-center{text-align:center}
+    .flex{display:flex}
+    .gap-40{gap:40px}
+    .items-stretch{align-items:stretch}
+    .justify-center{justify-content:center}
+    .w-full{width:100%}
+    .mx-auto{margin-left:auto;margin-right:auto}
+    .rounded-12{border-radius:12px}
+    .btn-orange{background:#ee6f4b;color:#fff;border:none;border-radius:6px;padding:12px 40px;font:600 16px/1 'Inter Tight'}
 
-        .header-title {
-            font-size: 48px; /* Placeholder; adjust based on Figma typography */
-            font-weight: bold;
-            color: #000000; /* Placeholder color */
-        }
+    /* HEADER */
+    .header-title{
+      width:536px;height:96px;background:#161723;color:#fff;
+      font:600 40px/120% 'Inter Tight',sans-serif;
+      letter-spacing:.25px;display:flex;align-items:center;justify-content:center;
+      border-radius:12px;margin-bottom:48px
+    }
 
-        .second-container {
-            width: 1170px;
-            height: 370px;
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            opacity: 1;
-        }
+    /* ICON BLOCKS */
+    .icon-row{gap:16px;align-items:center;margin-bottom:32px}
+    .icon-circle{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .icon-title{font:600 18px/1 'Inter Tight';margin-bottom:4px}
+    .icon-text{font-size:15px}
 
-        .container-a, .container-c {
-            width: 370px;
-            height: 250px;
-            display: flex;
-            flex-direction: column;
-            gap: 80px;
-            opacity: 1;
-        }
+    /* KEY POINTS */
+    .key-grid{display:grid;grid-template-columns:80px 1fr;gap:48px;align-items:start;margin:24px 0}
+    .key-num{font:700 32px/1 #ee6f4b}
+    .key-line{padding-bottom:16px;border-bottom:1px solid #e3e3e8}
+    .key-line:last-child{border:none;padding-bottom:0}
 
-        .container-b {
-            width: 370px;
-            height: 370px;
-            opacity: 1;
-            background-color: #f0f0f0; /* Placeholder for content; could be an image or special element */
-            /* Add background image or other styles if B is visually different */
-        }
+    /* SPLIT CIRCLE */
+    .split-circle{position:relative;width:380px;height:380px;margin:40px auto}
+    .split-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:50%}
+    .split-left{clip-path:polygon(0 0,50% 0,50% 100%,0 100%);z-index:1}
+    .split-right{clip-path:polygon(50% 0,100% 0,100% 100%,50% 100%);z-index:2}
+    .split-line{position:absolute;top:0;left:50%;width:4px;height:100%;background:#ee6f4b;transform:translateX(-50%);z-index:3}
+    .split-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:4}
 
-        .sub-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 10px; /* Placeholder gap between icon and paragraph */
-        }
-
-        .icon-container {
-            width: 40px; /* Placeholder for icon size */
-            height: 40px;
-            background-color: #cccccc; /* Placeholder; replace with actual icon SVG or img */
-        }
-
-        .paragraph-container {
-            flex: 1;
-        }
-
-        .paragraph {
-            font-size: 16px; /* Placeholder */
-            color: #333333;
-        }
-
-        /* Second Section */
-        #second-section {
-            height: 731px;
-            padding-top: 80px;
-            padding-bottom: 80px;
-            gap: 30px;
-            opacity: 1;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-
-        .container-d {
-            width: 570px;
-            height: 571px;
-            padding-right: 32px;
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-            opacity: 1;
-        }
-
-        .sub-container-d {
-            height: auto; /* Adjust as needed */
-            background-color: #e0e0e0; /* Placeholder for text/content containers */
-            padding: 20px; /* Placeholder */
-        }
-
-        .container-e {
-            width: 570px;
-            height: 570px;
-            opacity: 1;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .dog-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Assuming cover; adjust if needed */
-        }
-
-        /* Third Section */
-        #third-section {
-            height: 1200px;
-            padding-top: 80px;
-            padding-bottom: 80px;
-            gap: 80px;
-            opacity: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .container-f, .container-g {
-            width: 1170px;
-            height: 480px;
-            display: flex;
-            flex-direction: row;
-            gap: 30px;
-            opacity: 1;
-        }
-
-        .gif-left, .image-right {
-            width: 570px;
-            height: 480px;
-            opacity: 1;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .text-right, .text-left {
-            width: 570px;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            opacity: 1;
-        }
-
-        .text-right {
-            height: 280px;
-            padding-left: 32px;
-        }
-
-        .text-left {
-            height: 256px;
-            padding-right: 32px;
-        }
-
-        .media {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Add media queries for responsiveness if desired */
-        @media (max-width: 1920px) {
-            .section {
-                width: 100%;
-            }
-        }
-    </style>
+    /* MEDIA BLOCKS */
+    .media-block{gap:30px;align-items:center;height:480px}
+    .media-box{width:570px;height:100%;overflow:hidden;border-radius:12px}
+    .text-box{width:570px;padding:0 32px;display:flex;flex-direction:column;gap:16px}
+  </style>
 </head>
 <body>
-    <div class="section" id="first-section">
-        <!-- First container: Header -->
-        <div class="header-container">
-            <h1 class="header-title">What makes us different makes them stronger</h1>
+
+  <!-- SECTION 1: HERO + ICONS -->
+  <div class="section">
+    <h1 class="header-title">What makes us different<br>makes them stronger</h1>
+
+    <div class="flex gap-40 justify-center">
+      <!-- LEFT ICONS -->
+      <div>
+        <div class="icon-row flex">
+          <div class="icon-circle" style="background:#dcf9ca"><svg width="36" height="36" viewBox="0 0 37 37"><g stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.943 12.686a4.245 4.245 0 0 0-6.321-2.166A4.22 4.22 0 0 0 6.75 13.4M5.82 13.979a4.22 4.22 0 0 0-3.365.55 4.245 4.245 0 0 0-.7 6.544"/><path d="m18.754 24.33-2.456-3.776a4.343 4.343 0 0 0 1.268-6.01 4.343 4.343 0 0 0-6.604-.812 4.34 4.34 0 0 0-4.765-.026 4.34 4.34 0 0 0-1.912 4.36 4.343 4.343 0 0 0-1.905 6.352 4.34 4.34 0 0 0 3.237 1.96M8.898 17.833l3.953 6.08"/><path d="M7.426 21.405a4.49 4.49 0 0 0 5.335-3.468M12.852 23.913a2.93 2.93 0 0 0 1.274-1.86M32.398 25.533V15.2c0-1.005-.208-2-.61-2.921L30.254 8.77a7.3 7.3 0 0 1-.61-2.922V3.445h-5.339v2.403c0 1.006-.208 2-.61 2.922L22.16 12.28a7.3 7.3 0 0 0-.61 2.921v8.312"/><path d="m29.52 12.348.338.775c.288.66.434 1.358.434 2.077M26.868.527h-3.06a.775.775 0 0 0-.775.775v1.369c0 .427.347.774.775.774h6.335a.775.775 0 0 0 .775-.774V1.302a.775.775 0 0 0-.775-.775h-.472"/><path d="M30.257 8.77a7.3 7.3 0 0 1-.61-2.922V3.445h-5.34v2.403c0 1.006-.207 2-.61 2.922l-.627 1.435h7.814zM26.578 29.217c.631-.688 1.38-1.63 1.28-2.438l.01-.002v-3.004M5.4 27.171v3.239a3 3 0 0 0 0 .728c.095.812.497 1.613 1.113 2.24 1.088 1.107 2.734 1.724 4.399 1.965 3.787.547 7.658-.699 10.857-2.521q.417-.237.822-.485"/><path d="M13.275 32.228c3.002-.116 5.957-1.197 8.49-2.64 1.887-1.075 3.63-2.31 4.815-3.604.852-.93 1.92-2.322.82-3.22-1.375-1.123-3.683-.266-5.06.376-.896.417-1.776.877-2.75 1.133-1.575.413-3.268.261-4.894.042s-3.27-.503-4.905-.341-3.302.86-4.035 2.123c-.752 1.295-.334 2.941.754 4.048.994 1.01 2.455 1.612 3.97 1.892"/><path d="M12.873 27.884c0 .612-.887 1.107-1.981 1.107s-1.982-.495-1.982-1.107.887-1.108 1.982-1.108 1.981.496 1.981 1.108M29.379 29.713c.18-2.078 1.47-4.052 3.035-4.052 1.688 0 3.057 2.296 3.057 4.542s-1.369 3.562-3.057 3.562a2.93 2.93 0 0 1-1.533-.419"/><path d="M27.179 29.36c2.246 0 3.562 1.368 3.562 3.056s-1.316 3.057-3.562 3.057-4.542-1.369-4.542-3.057 2.296-3.056 4.542-3.056"/><path d="M28.168 31.189c.511.247.802.684.802 1.256"/></g></svg></div>
+          <div><h3 class="icon-title">Real Food</h3><p class="icon-text">Wholesome recipes for dogs with real meat and veggies</p></div>
         </div>
 
-        <!-- Second container with A, B, C -->
-        <div class="second-container">
-            <!-- Container A -->
-            <div class="container-a">
-                <!-- Sub-containers with icons and paragraphs (assuming 2 as per description) -->
-                <div class="sub-container">
-                    <div class="icon-container"><!-- Icon here; e.g., <img src="icon1.png" alt="Icon 1"> --></div>
-                    <div class="paragraph-container">
-                        <p class="paragraph">Placeholder paragraph text for Container A, item 1.</p>
-                    </div>
-                </div>
-                <div class="sub-container">
-                    <div class="icon-container"><!-- Icon here; e.g., <img src="icon2.png" alt="Icon 2"> --></div>
-                    <div class="paragraph-container">
-                        <p class="paragraph">Placeholder paragraph text for Container A, item 2.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Container B (taller, perhaps a central image or feature) -->
-            <div class="container-b">
-                <!-- Placeholder content for B; could be an image, video, etc. -->
-                <p>Placeholder for Container B (e.g., central image or content).</p>
-            </div>
-
-            <!-- Container C (similar to A) -->
-            <div class="container-c">
-                <!-- Sub-containers with icons and paragraphs -->
-                <div class="sub-container">
-                    <div class="icon-container"><!-- Icon here --></div>
-                    <div class="paragraph-container">
-                        <p class="paragraph">Placeholder paragraph text for Container C, item 1.</p>
-                    </div>
-                </div>
-                <div class="sub-container">
-                    <div class="icon-container"><!-- Icon here --></div>
-                    <div class="paragraph-container">
-                        <p class="paragraph">Placeholder paragraph text for Container C, item 2.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="icon-row flex">
+          <div class="icon-circle" style="background:#f8f0d6"><svg width="36" height="36" viewBox="0 0 37 37"><path fill="#000" d="M12.98 13.664a.746.746 0 100-1.492.746.746 0 000 1.492M7.827 1.54l.613 1.724a.28.28 0 00.144.162l1.53.69c.217.097.217.441 0 .539l-1.53.69a.28.28 0 00-.144.161L7.827 7.23c-.086.244-.392.244-.48 0l-.612-1.723a.28.28 0 00-.144-.161l-1.53-.69c-.217-.098-.217-.442 0-.54l1.53-.69a.28.28 0 00.144-.161l.613-1.723c.086-.243.393-.243.48 0M26.835.135l.454 1.278c.02.055.058.099.107.12l1.135.512c.16.072.16.328 0 .4l-1.135.512a.2.2 0 00-.107.12l-.455 1.278c-.064.18-.29.18-.355 0l-.454-1.278a.2.2 0 00-.107-.12l-1.136-.512c-.16-.072-.16-.328 0-.4l1.136-.511a.2.2 0 00.107-.12l.454-1.279c.064-.18.291-.18.355 0M17.233 7.079a1.338 1.338 0 100-2.676 1.338 1.338 0 000 2.676M29.933 7.588a.577.577 0 100-1.155.577.577 0 000 1.155m5.497 21.595l-2.783-9.272a2.89 2.89 0 00-1.941-1.947 3.681 3.681 0 00-4.001-4.537q.006-.11.006-.218a3.68 3.68 0 00-3.677-3.678 3.65 3.65 0 00-3.243 1.94 3.7 3.7 0 00-1.447-.298c-.607 0-1.202.153-1.731.435a3.68 3.68 0 00-3.31-2.077 3.68 3.68 0 00-3.672 3.881 3.66 3.66 0 00-2.35 3.431c0 .377.057.74.163 1.082a2.92 2.92 0 00-2.103 2.01l-2.688 9.24A2.894 2.894 0 000 32.055v.446a2.894 2.894 0 002.891 2.89h32.218a2.894 2.894 0 002.89-2.89v-.446a2.895 2.895 0 00-2.569-2.872M10.591 14.689a.746.746 0 00.598-.925 2.188 2.188 0 012.114-2.741c1.1 0 2.03.822 2.167 1.911a.746.746 0 001.283.42 2.17 2.17 0 011.591-.69c.502 0 .974.167 1.365.48a.746.746 0 001.194-.418 2.2 2.2 0 012.131-1.703 2.188 2.188 0 011.939 3.194.746.746 0 001.044.984 2.188 2.188 0 013.167 2.64H9.014a2.2 2.2 0 01-.241-.998c0-1.07.764-1.976 1.818-2.154m-3.818 5.663a1.42 1.42 0 011.358-1.019h21.733c.63 0 1.173.405 1.354 1.007l2.649 8.824H4.21zM36.508 32.5a1.4 1.4 0 01-1.4 1.399H2.892a1.4 1.4 0 01-1.4-1.4v-.445a1.4 1.4 0 011.4-1.399h32.218a1.4 1.4 0 011.399 1.4z"/><path fill="#000" stroke="#000" stroke-width=".25" d="M22.78 27.678a2.124 2.124 0 01-2.093-1.778h-3.375a2.124 2.124 0 01-2.094 1.778 2.123 2.123 0 01-1.683-3.41 2.123 2.123 0 011.684-3.41c1.052-.002 1.928.77 2.093 1.776h3.375a2.124 2.124 0 012.093-1.778 2.123 2.123 0 011.684 3.411 2.123 2.123 0 01-1.684 3.41Zm-5.892-2.673h4.222a.447.447 0 01.447.475l-.003.077a1.227 1.227 0 102.006-.945.448.448 0 010-.69 1.227 1.227 0 00-.78-2.17 1.227 1.227 0 00-1.223 1.303.45.45 0 01-.447.474h-4.222a.45.45 0 01-.447-.475q.003-.038.003-.077c0-.676-.55-1.226-1.225-1.226a1.227 1.227 0 00-.781 2.171.448.448 0 010 .69 1.227 1.227 0 00.78 2.17 1.227 1.227 0 001.224-1.302.45.45 0 01.446-.475Z"/><path fill="#000" d="M19.545 16.267a.45.45 0 01-.447-.448v-.902a.448.448 0 01.895 0v.902c0 .247-.2.448-.448.448M22.864 16.973a.45.45 0 01-.448-.448v-.903a.448.448 0 01.895 0v.903c0 .247-.2.448-.447.448"/></svg></div>
+          <div><h3 class="icon-title">Premium Ingredient</h3><p class="icon-text">Elevating pet care with unmatched safety and quality</p></div>
         </div>
+      </div>
+
+      <!-- CENTER: SPLIT CIRCLE -->
+      <div class="split-circle">
+        <img src="food-one.png" alt="Left bowl" class="split-img split-left">
+        <img src="food-two.png" alt="Right bowl" class="split-img split-right">
+        <div class="split-line"></div>
+        <div class="split-center">
+          <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="21" fill="#fff" stroke="#ee6f4b" stroke-width="2"/></svg>
+          <svg width="10" height="12" viewBox="0 0 5 6" style="position:absolute;top:50%;left:9px;transform:translateY(-50%)"><path fill="#ee6f4b" d="M0 2.598 4.5 0v5.196z"/></svg>
+          <svg width="10" height="12" viewBox="0 0 5 6" style="position:absolute;top:50%;right:9px;transform:translateY(-50%)"><path fill="#ee6f4b" d="M4.5 2.598 0 5.196V0z"/></svg>
+        </div>
+      </div>
+
+      <!-- RIGHT ICONS -->
+      <div>
+        <div class="icon-row flex">
+          <div class="icon-circle" style="background:#c8f2e7"><svg width="36" height="36" viewBox="0 0 37 37"><path fill="#000" stroke="#000" stroke-width=".25" d="M14.803 17.797a1.8 1.8 0 0 0-.18 1.37l.408 1.525c.125.466.424.855.842 1.097a1.8 1.8 0 0 0 1.371.18 1.8 1.8 0 0 0 1.097-.842c.241-.418.305-.904.18-1.37l-.408-1.525a1.8 1.8 0 0 0-.842-1.097 1.8 1.8 0 0 0-1.37-.18 1.8 1.8 0 0 0-1.098.842Zm.914.527a.75.75 0 0 1 .65-.376c.333 0 .637.222.727.557l.409 1.524a.75.75 0 0 1-.075.571.752.752 0 0 1-1.378-.181l-.408-1.524a.75.75 0 0 1 .075-.571ZM29.98 16.955a1.8 1.8 0 0 0-1.37.18c-.418.242-.717.631-.842 1.097l-.409 1.524c-.125.466-.06.953.18 1.371a1.8 1.8 0 0 0 1.568.904c.313 0 .622-.082.9-.242.418-.242.717-.631.842-1.098l.409-1.524c.125-.466.06-.953-.18-1.37a1.8 1.8 0 0 0-1.098-.842Zm.259 1.94-.408 1.524a.753.753 0 0 1-1.453-.39l.408-1.524a.753.753 0 0 1 1.378-.181c.1.174.127.377.075.57ZM18.64 15.437v1.577c0 .996.811 1.807 1.807 1.807s1.807-.81 1.807-1.807v-1.577c0-.997-.81-1.807-1.807-1.807s-1.806.81-1.806 1.806Zm2.56 0v1.577a.753.753 0 0 1-1.505 0v-1.577a.753.753 0 0 1 1.504 0ZM23.625 15.437v1.577c0 .996.81 1.807 1.807 1.807s1.806-.81 1.806-1.807v-1.577c0-.997-.81-1.807-1.806-1.807s-1.807.81-1.807 1.806Zm2.558 0v1.577a.753.753 0 0 1-1.503 0v-1.577a.753.753 0 0 1 1.503 0ZM10.985 29.431l-.12.12-.12-.12a1.77 1.77 0 0 0-1.262-.523c-.477 0-.926.186-1.263.523a1.77 1.77 0 0 0-.523 1.263c0 .476.186.925.523 1.262l2.033 2.033a.863.863 0 0 0 1.224 0l2.033-2.033c.337-.337.523-.786.523-1.262a1.787 1.787 0 0 0-3.048-1.263Zm1.78 1.78-1.9 1.898-1.899-1.899a.731.731 0 0 1 1.033-1.033l.493.493c.206.206.54.206.746 0l.493-.493a.732.732 0 0 1 1.033 1.033ZM27.438 32.644c0 .291.236.527.527.527h3.382a.527.527 0 1 0 0-1.054h-3.382a.527.527 0 0 0-.527.527Z"/><path fill="#000" stroke="#000" stroke-width=".25" d="M33.402 36.125c.67 0 1.296-.265 1.763-.746a2.44 2.44 0 0 0 .69-1.785l-.697-22.246a2.3 2.3 0 0 0-.214-.897L32.95 6.194a1.2 1.2 0 0 1-.116-.522V1.809c0-.929-.755-1.684-1.683-1.684H14.73c-.929 0-1.684.755-1.684 1.684v3.863c0 .18-.04.36-.116.522l-1.993 4.257a2.3 2.3 0 0 0-.215.897l-.126 4.023a.527.527 0 1 0 1.054.034l.126-4.024q.008-.253.116-.483l1.993-4.257a2.3 2.3 0 0 0 .216-.97V1.81a.63.63 0 0 1 .629-.63h16.42a.63.63 0 0 1 .63.63v3.863c0 .333.074.668.215.969l1.994 4.257q.107.23.115.483l.697 22.246c.012.382-.128.743-.394 1.018a1.4 1.4 0 0 1-1.005.425H21.514c.09-.253.115-.528.067-.8l-.865-4.95a3.7 3.7 0 0 0 1.738-.436 1.03 1.03 0 0 1 .973 0c.595.319 1.269.467 1.95.43a3.723 3.723 0 0 0 3.5-3.61 3.72 3.72 0 0 0-2.386-3.557.43.43 0 0 1-.229-.21 3.69 3.69 0 0 0-3.322-2.062c-1.418 0-2.69.79-3.322 2.061a.43.43 0 0 1-.228.211 3.71 3.71 0 0 0-2.142 2.138 3.7 3.7 0 0 0-1.867-.505c-.696 0-1.36.189-1.945.548a3.7 3.7 0 0 0-2.05-.47l.192-6.155a.527.527 0 0 0-.51-.544h-.017a.527.527 0 0 0-.527.51l-.185 5.921a4.8 4.8 0 0 0-2.86-.639.527.527 0 0 0 .094 1.05 3.74 3.74 0 0 1 2.796.903.53.53 0 0 0 .494.109 2.67 2.67 0 0 1 2.282.377c.188.132.44.128.623-.012a2.64 2.64 0 0 1 1.613-.543c1.308 0 2.398.947 2.624 2.19H4.239a3.73 3.73 0 0 1 1.437-2.295.527.527 0 0 0-.632-.845 4.78 4.78 0 0 0-1.875 3.14h-.424c-.77 0-1.426.552-1.559 1.31L.15 34.27a1.578 1.578 0 0 0 1.558 1.854h31.695zM19.765 23.133c.348-.133.63-.391.798-.728a2.64 2.64 0 0 1 2.377-1.475 2.64 2.64 0 0 1 2.377 1.475c.168.337.451.595.798.728a2.66 2.66 0 0 1 1.707 2.546 2.66 2.66 0 0 1-2.503 2.582c-.488.026-.97-.08-1.395-.307a2.08 2.08 0 0 0-1.967 0 2.66 2.66 0 0 1-1.396.307h-.034a1.58 1.58 0 0 0-1.455-1.231 3.7 3.7 0 0 0-.941-2.034c.2-.847.81-1.549 1.634-1.863ZM1.303 34.883a.52.52 0 0 1-.115-.43l1.037-5.936a.526.526 0 0 1 .52-.437h16.24c.257 0 .476.184.52.437l1.038 5.935a.52.52 0 0 1-.116.43.52.52 0 0 1-.404.188H1.707a.52.52 0 0 1-.404-.188Z"/><path fill="#000" stroke="#000" stroke-width=".25" d="M29.803 3.055h-3.221a.527.527 0 1 0 0 1.055h3.22a.527.527 0 1 0 0-1.055ZM24.283 3.055h-8.205a.527.527 0 1 0 0 1.055h8.205a.527.527 0 1 0 0-1.055Z"/></svg></div>
+          <div><h3 class="icon-title">Made Fresh</h3><p class="icon-text">We prioritize maintaining the integrity of whole foods and nutrition.</p></div>
+        </div>
+
+        <div class="icon-row flex">
+          <div class="icon-circle" style="background:#f7cabd"><svg width="36" height="36" viewBox="0 0 37 37"><path fill="#000" stroke="#000" stroke-width=".25" d="M.125 19.325a5.407 5.407 0 005.4 5.4h6v6a5.406 5.406 0 005.4 5.4h2.4a5.407 5.407 0 005.4-5.4v-3.533q.296-.071.6-.067a2.32 2.32 0 011.485.498 3.54 3.54 0 002.17.702 2.76 2.76 0 002.675-1.745 4.48 4.48 0 00-1.066-4.68 8.8 8.8 0 01-1.278-1.74c-.794-1.296-1.613-2.635-3.986-2.635s-3.193 1.34-3.986 2.634a8.8 8.8 0 01-1.278 1.74 4.48 4.48 0 00-1.067 4.68 2.76 2.76 0 002.676 1.746 3.4 3.4 0 001.855-.502v2.902a4.205 4.205 0 01-4.2 4.2h-2.4a4.205 4.205 0 01-4.2-4.2v-6a1.2 1.2 0 00-1.2-1.2h-6a4.205 4.205 0 01-4.2-4.2v-2.4a4.205 4.205 0 014.2-4.2h6a1.2 1.2 0 001.2-1.2v-6a4.205 4.205 0 014.2-4.2h2.4a4.205 4.205 0 014.2 4.2v4.594a2.75 2.75 0 00-2.377-.954 2.7 2.7 0 00-1.988 1.512 4.6 4.6 0 00-.427 2.774c.122.952.539 1.841 1.192 2.543a2.78 2.78 0 001.99.916q.171 0 .343-.025a2.7 2.7 0 001.988-1.512 4.4 4.4 0 00.479-2.048v-7.8a5.407 5.407 0 00-5.4-5.4h-2.4a5.406 5.406 0 00-5.4 5.4v6h-6a5.406 5.406 0 00-5.4 5.4zm21.545 7.8a1.565 1.565 0 01-1.565-1.002 3.33 3.33 0 01.802-3.372 10 10 0 001.457-1.965c.758-1.242 1.26-2.061 2.96-2.061 1.701 0 2.203.82 2.963 2.06a10 10 0 001.457 1.966 3.33 3.33 0 01.8 3.372 1.565 1.565 0 01-1.564 1.002 2.36 2.36 0 01-1.512-.505 3.65 3.65 0 00-4.286 0c-.43.339-.965.517-1.512.505Zm1.514-12.312a1.38 1.38 0 01-2.4.345 3.4 3.4 0 01-.864-1.877 3.37 3.37 0 01.3-2.044c.201-.455.61-.785 1.097-.884.968-.138 1.958.967 2.166 2.416q.04.27.04.546v.01a3.2 3.2 0 01-.339 1.488Z"/><path fill="#000" stroke="#000" stroke-width=".25" d="M15.745 15.527c-1.19.577-1.572 2.258-.851 3.747a3.07 3.07 0 002.602 1.848c.3.001.597-.066.867-.196 1.19-.577 1.572-2.259.85-3.747-.721-1.488-2.277-2.23-3.468-1.652Zm2.094 4.32c-.586.284-1.44-.218-1.865-1.096s-.29-1.86.295-2.143a.8.8 0 01.36-.08 1.9 1.9 0 011.507 1.176c.423.877.289 1.862-.297 2.143ZM28.392 16.885q.17.025.343.025c.76-.02 1.48-.351 1.99-.916a4.6 4.6 0 001.191-2.542 4.6 4.6 0 00-.427-2.775 2.7 2.7 0 00-1.988-1.512c-1.635-.236-3.218 1.305-3.524 3.433a4.6 4.6 0 00.427 2.775 2.7 2.7 0 001.988 1.512Zm-1.227-4.116c.197-1.366 1.09-2.428 2.001-2.428q.082 0 .165.012c.487.1.896.429 1.097.884.311.633.416 1.348.3 2.044a3.4 3.4 0 01-.864 1.877 1.38 1.38 0 01-2.4-.345 3.38 3.38 0 01-.299-2.044ZM32.284 20.926c.27.13.566.197.866.196a3.07 3.07 0 002.602-1.849c.72-1.488.34-3.169-.85-3.746-1.192-.577-2.747.164-3.469 1.652s-.338 3.17.85 3.747Zm1.74-4.399a.8.8 0 01.36.08c.585.283.72 1.265.294 2.143-.425.878-1.28 1.38-1.864 1.096s-.72-1.265-.295-2.143a1.9 1.9 0 011.505-1.176ZM3.725 16.925a1.8 1.8 0 011.8-1.8.6.6 0 100-1.2 3.004 3.004 0 00-3 3 .6.6 0 101.2 0ZM8.525 15.125a.6.6 0 100-1.2h-.6a.6.6 0 000 1.2z"/></svg></div>
+          <div><h3 class="icon-title">Vet Developed</h3><p class="icon-text">We raise the bar for dog nutrition, surpassing industry expectations.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: TEXT + DOG -->
+  <div class="section flex gap-40 items-stretch" style="background:#f8f8f8">
+    <div style="flex:1">
+      <h1 class="title-xl" style="margin-bottom:16px">Nutrition is the foundation for longer, healthier lives in dogs.</h1>
+      <p class="text-lg" style="margin-bottom:32px">Invest in your dog's future with our scientifically formulated superfood-powered supplements. Give them the nutrition they deserve and watch them thrive with vitality, energy, and the joy of a longer, healthier life.</p>
+
+      <h3 class="title-xl" style="font-size:20px;margin-bottom:24px">Key Points</h3>
+      <div class="key-grid">
+        <div class="key-num">97%</div><div class="key-line">Dogs choose our dog food over leading brands because of its real functional ingredients and delicious flavor.</div>
+        <div class="key-num">84%</div><div class="key-line">Our dog food provides superior nutrition and a patented probiotic for optimal nutrient absorption</div>
+        <div class="key-num">92%</div><div class="key-line">Our dog food's high protein and fat digestibility contribute to ideal stool quality.</div>
+      </div>
+      <button class="btn-orange w-full" style="max-width:538px;margin-top:32px">Give your friend the gift of wholesome nutrition</button>
+    </div>
+    <div style="flex-shrink:0"><img src="dog-single.png" alt="Happy Dog" class="rounded-12" style="height:100%;object-fit:cover"></div>
+  </div>
+
+  <!-- SECTION 3: MEDIA BLOCKS -->
+  <div class="section">
+    <div class="media-block flex">
+      <div class="media-box"><img src="puppy-eat.gif" alt="Puppy eating" class="w-full h-full" style="object-fit:cover"></div>
+      <div class="text-box">
+        <h3 class="title-xl">Improve overall gastrointestinal health for better nutrient absorption</h3>
+        <p class="text-sm">Through rigorous scientific studies and consultations with veterinarians, we have created a breakthrough formula exclusively tailored to combat the health challenges prevalent in dogs. A staggering <strong>91%</strong> of our customers have reported significant improvements in their dogs' health after incorporating our product into their diet.</p>
+      </div>
     </div>
 
-    <div class="section" id="second-section">
-        <!-- Container D -->
-        <div class="container-d">
-            <!-- Three vertical sub-containers (assuming text blocks) -->
-            <div class="sub-container-d">Placeholder for sub-container 1 in D (e.g., heading or text).</div>
-            <div class="sub-container-d">Placeholder for sub-container 2 in D (e.g., paragraph).</div>
-            <div class="sub-container-d">Placeholder for sub-container 3 in D (e.g., button or list).</div>
-        </div>
-
-        <!-- Container E: Dog image -->
-        <div class="container-e">
-            <img src="path/to/dog-image.jpg" alt="Dog Image" class="dog-image">
-        </div>
+    <div class="media-block flex" style="flex-direction:row-reverse">
+      <div class="media-box"><img src="grains.jpg" alt="Fresh grains" class="w-full h-full" style="object-fit:cover"></div>
+      <div class="text-box" style="padding:0 32px 0 0">
+        <h3 class="title-xl">Prebiotics nourish the beneficial gut bacteria, supporting digestive health</h3>
+        <p class="text-sm">Our dog food formula contains carefully selected prebiotics that work in harmony with the gut microbiota, providing the necessary nutrients for the growth and maintenance of beneficial bacteria, ultimately supporting digestive health.</p>
+      </div>
     </div>
-
-    <div class="section" id="third-section">
-        <!-- Container F -->
-        <div class="container-f">
-            <!-- GIF left -->
-            <div class="gif-left">
-                <img src="path/to/gif.gif" alt="GIF" class="media">
-            </div>
-            <!-- Text right -->
-            <div class="text-right">
-                <p>Placeholder text for Container F right side, line 1.</p>
-                <p>Placeholder text for Container F right side, line 2.</p>
-                <!-- Add more elements as per Figma (e.g., headings, buttons) -->
-            </div>
-        </div>
-
-        <!-- Container G -->
-        <div class="container-g">
-            <!-- Text left -->
-            <div class="text-left">
-                <p>Placeholder text for Container G left side, line 1.</p>
-                <p>Placeholder text for Container G left side, line 2.</p>
-                <!-- Add more elements as per Figma -->
-            </div>
-            <!-- Image right -->
-            <div class="image-right">
-                <img src="path/to/image.png" alt="Image" class="media">
-            </div>
-        </div>
-    </div>
+  </div>
 </body>
 </html>
