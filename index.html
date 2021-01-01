@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figma Design Recreation</title>
+    <style>
+        /* Global resets and centering */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif; /* Placeholder font; replace with actual from Figma */
+            background-color: #ffffff; /* Assuming white background; adjust as needed */
+        }
+
+        .section {
+            width: 1920px;
+            margin: 0 auto; /* Center the section if viewport is wider */
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* First Section */
+        #first-section {
+            height: 810px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            gap: 48px;
+            opacity: 1;
+        }
+
+        .header-container {
+            width: 100%; /* Full width within section */
+            text-align: center; /* Assuming centered text; adjust based on Figma */
+        }
+
+        .header-title {
+            font-size: 48px; /* Placeholder; adjust based on Figma typography */
+            font-weight: bold;
+            color: #000000; /* Placeholder color */
+        }
+
+        .second-container {
+            width: 1170px;
+            height: 370px;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            opacity: 1;
+        }
+
+        .container-a, .container-c {
+            width: 370px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+            opacity: 1;
+        }
+
+        .container-b {
+            width: 370px;
+            height: 370px;
+            opacity: 1;
+            background-color: #f0f0f0; /* Placeholder for content; could be an image or special element */
+            /* Add background image or other styles if B is visually different */
+        }
+
+        .sub-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px; /* Placeholder gap between icon and paragraph */
+        }
+
+        .icon-container {
+            width: 40px; /* Placeholder for icon size */
+            height: 40px;
+            background-color: #cccccc; /* Placeholder; replace with actual icon SVG or img */
+        }
+
+        .paragraph-container {
+            flex: 1;
+        }
+
+        .paragraph {
+            font-size: 16px; /* Placeholder */
+            color: #333333;
+        }
+
+        /* Second Section */
+        #second-section {
+            height: 731px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            gap: 30px;
+            opacity: 1;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .container-d {
+            width: 570px;
+            height: 571px;
+            padding-right: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            opacity: 1;
+        }
+
+        .sub-container-d {
+            height: auto; /* Adjust as needed */
+            background-color: #e0e0e0; /* Placeholder for text/content containers */
+            padding: 20px; /* Placeholder */
+        }
+
+        .container-e {
+            width: 570px;
+            height: 570px;
+            opacity: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dog-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Assuming cover; adjust if needed */
+        }
+
+        /* Third Section */
+        #third-section {
+            height: 1200px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            gap: 80px;
+            opacity: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container-f, .container-g {
+            width: 1170px;
+            height: 480px;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            opacity: 1;
+        }
+
+        .gif-left, .image-right {
+            width: 570px;
+            height: 480px;
+            opacity: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .text-right, .text-left {
+            width: 570px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            opacity: 1;
+        }
+
+        .text-right {
+            height: 280px;
+            padding-left: 32px;
+        }
+
+        .text-left {
+            height: 256px;
+            padding-right: 32px;
+        }
+
+        .media {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Add media queries for responsiveness if desired */
+        @media (max-width: 1920px) {
+            .section {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="section" id="first-section">
+        <!-- First container: Header -->
+        <div class="header-container">
+            <h1 class="header-title">What makes us different makes them stronger</h1>
+        </div>
+
+        <!-- Second container with A, B, C -->
+        <div class="second-container">
+            <!-- Container A -->
+            <div class="container-a">
+                <!-- Sub-containers with icons and paragraphs (assuming 2 as per description) -->
+                <div class="sub-container">
+                    <div class="icon-container"><!-- Icon here; e.g., <img src="icon1.png" alt="Icon 1"> --></div>
+                    <div class="paragraph-container">
+                        <p class="paragraph">Placeholder paragraph text for Container A, item 1.</p>
+                    </div>
+                </div>
+                <div class="sub-container">
+                    <div class="icon-container"><!-- Icon here; e.g., <img src="icon2.png" alt="Icon 2"> --></div>
+                    <div class="paragraph-container">
+                        <p class="paragraph">Placeholder paragraph text for Container A, item 2.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container B (taller, perhaps a central image or feature) -->
+            <div class="container-b">
+                <!-- Placeholder content for B; could be an image, video, etc. -->
+                <p>Placeholder for Container B (e.g., central image or content).</p>
+            </div>
+
+            <!-- Container C (similar to A) -->
+            <div class="container-c">
+                <!-- Sub-containers with icons and paragraphs -->
+                <div class="sub-container">
+                    <div class="icon-container"><!-- Icon here --></div>
+                    <div class="paragraph-container">
+                        <p class="paragraph">Placeholder paragraph text for Container C, item 1.</p>
+                    </div>
+                </div>
+                <div class="sub-container">
+                    <div class="icon-container"><!-- Icon here --></div>
+                    <div class="paragraph-container">
+                        <p class="paragraph">Placeholder paragraph text for Container C, item 2.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="second-section">
+        <!-- Container D -->
+        <div class="container-d">
+            <!-- Three vertical sub-containers (assuming text blocks) -->
+            <div class="sub-container-d">Placeholder for sub-container 1 in D (e.g., heading or text).</div>
+            <div class="sub-container-d">Placeholder for sub-container 2 in D (e.g., paragraph).</div>
+            <div class="sub-container-d">Placeholder for sub-container 3 in D (e.g., button or list).</div>
+        </div>
+
+        <!-- Container E: Dog image -->
+        <div class="container-e">
+            <img src="path/to/dog-image.jpg" alt="Dog Image" class="dog-image">
+        </div>
+    </div>
+
+    <div class="section" id="third-section">
+        <!-- Container F -->
+        <div class="container-f">
+            <!-- GIF left -->
+            <div class="gif-left">
+                <img src="path/to/gif.gif" alt="GIF" class="media">
+            </div>
+            <!-- Text right -->
+            <div class="text-right">
+                <p>Placeholder text for Container F right side, line 1.</p>
+                <p>Placeholder text for Container F right side, line 2.</p>
+                <!-- Add more elements as per Figma (e.g., headings, buttons) -->
+            </div>
+        </div>
+
+        <!-- Container G -->
+        <div class="container-g">
+            <!-- Text left -->
+            <div class="text-left">
+                <p>Placeholder text for Container G left side, line 1.</p>
+                <p>Placeholder text for Container G left side, line 2.</p>
+                <!-- Add more elements as per Figma -->
+            </div>
+            <!-- Image right -->
+            <div class="image-right">
+                <img src="path/to/image.png" alt="Image" class="media">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
